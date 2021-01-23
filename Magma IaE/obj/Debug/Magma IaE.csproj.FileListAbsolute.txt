@@ -2,9 +2,6 @@ E:\2. Programming\Roblox\ScriptHub v3.4.1b - AltTheme\ScriptHub v3.4.1b\obj\Debu
 E:\2. Programming\Roblox\ScriptHub v3.4.1b - AltTheme\ScriptHub v3.4.1b\obj\Debug\App.g.cs
 E:\2. Programming\Roblox\ScriptHub v3.4.1b - AltTheme\ScriptHub v3.4.1b\obj\Debug\Magma_IaE_MarkupCompile.cache
 E:\2. Programming\Roblox\ScriptHub v3.4.1b - AltTheme\ScriptHub v3.4.1b\obj\Debug\Magma_IaE_MarkupCompile.lref
-C:\Users\316th\Desktop\Magma IaE\Magma_IaE.exe.config
-C:\Users\316th\Desktop\Magma IaE\Magma_IaE.exe
-C:\Users\316th\Desktop\Magma IaE\Magma_IaE.pdb
 E:\2. Programming\Roblox\ScriptHub v3.4.1b - AltTheme\ScriptHub v3.4.1b\obj\Debug\Magma IaE.csprojAssemblyReference.cache
 E:\2. Programming\Roblox\ScriptHub v3.4.1b - AltTheme\ScriptHub v3.4.1b\obj\Debug\App.baml
 E:\2. Programming\Roblox\ScriptHub v3.4.1b - AltTheme\ScriptHub v3.4.1b\obj\Debug\MainWindow.baml

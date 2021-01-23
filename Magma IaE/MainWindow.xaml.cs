@@ -305,6 +305,9 @@ namespace ScriptHub_v3._4._1b
             about.ToolTip = new ToolTip { Content = "View GitHub Documentation" };
             configInjector.ToolTip = new ToolTip { Content = "Configure Injector Settings" };
             injectButton.ToolTip = new ToolTip { Content = "Inject DLL" };
+            discUrl.ToolTip = new ToolTip { Content = "Join The Official Discord" };
+            webSite.ToolTip = new ToolTip { Content = "Visit My Website" };
+            gitHub.ToolTip = new ToolTip { Content = "Visit My GitHub" };
 
             /* Set Current View To Home Screen */
 
@@ -361,7 +364,7 @@ namespace ScriptHub_v3._4._1b
 
         private bool IsRobloxTabActive()
         {
-            if (ListViewMenu.SelectedIndex != 2) 
+            if (ListViewMenu.SelectedIndex != 2)
             {
                 return false;
             }
@@ -376,7 +379,7 @@ namespace ScriptHub_v3._4._1b
         private void CheckRobloxOpen(object sender, ElapsedEventArgs e)
         {
             bool tabStatus = true;
-            
+
             this.Dispatcher.Invoke(() => {
                 if (IsRobloxTabActive() == false)
                 {
@@ -569,7 +572,7 @@ namespace ScriptHub_v3._4._1b
         {
             TransitioningContentIndicator.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (195 + (60 * index)), 0, 0);
-            
+
             if (index == 2)
             {
                 GridCursor.Height = 52.5;
@@ -765,14 +768,14 @@ namespace ScriptHub_v3._4._1b
             }
         }
 
-        
+
 
         private void ButtonExecuteScript_Click(object sender, RoutedEventArgs e)
         {
             if (config[1] == "wrd")
             {
                 WRD.SendLuaScript(ScriptTextBox.Text);
-            } 
+            }
             else if (config[1] == "ezxp")
             {
                 EZXP.ExecuteScript(ScriptTextBox.Text);
@@ -1291,6 +1294,7 @@ namespace ScriptHub_v3._4._1b
                         apiInjected = false;
                     }
                 }
+
             }
             else
             {
@@ -1299,7 +1303,7 @@ namespace ScriptHub_v3._4._1b
             }
         }
 
-        /* Attach Api
+        /* Attach Api When ButtonReAttach Clicked */
 
         private void ButtonReAttach_Click(object sender, RoutedEventArgs e)
         {
@@ -1316,8 +1320,6 @@ namespace ScriptHub_v3._4._1b
                     Status.Text = "Injected";
                     apiInjected = true;
                     ButtonReAttach.ToolTip = new ToolTip { Content = "Re-Attach API" };
-                    MoveMenuCursor(1);
-                    ListViewMenu.SelectedIndex = 1;
                 }
                 else
                 {
@@ -1341,8 +1343,6 @@ namespace ScriptHub_v3._4._1b
                     Status.Text = "Injected";
                     apiInjected = true;
                     ButtonReAttach.ToolTip = new ToolTip { Content = "Re-Attach API" };
-                    MoveMenuCursor(1);
-                    ListViewMenu.SelectedIndex = 1;
                 }
                 else
                 {
@@ -1368,8 +1368,6 @@ namespace ScriptHub_v3._4._1b
                     Status.Text = "Injected";
                     apiInjected = true;
                     ButtonReAttach.ToolTip = new ToolTip { Content = "Re-Attach API" };
-                    MoveMenuCursor(1);
-                    ListViewMenu.SelectedIndex = 1;
                 }
                 else
                 {
@@ -1401,9 +1399,6 @@ namespace ScriptHub_v3._4._1b
                     Status.Text = "Injected";
                     apiInjected = true;
                     ButtonReAttach.ToolTip = new ToolTip { Content = "Re-Attach API" };
-
-                    MoveMenuCursor(1);
-                    ListViewMenu.SelectedIndex = 1;
                 }
                 else
                 {
@@ -1413,6 +1408,8 @@ namespace ScriptHub_v3._4._1b
                 }
             }
         }
+
+        /* Refresh Proccess List When refProcList Clicked */
 
         private void refProcList_Click(object sender, RoutedEventArgs e)
         {
@@ -1437,6 +1434,9 @@ namespace ScriptHub_v3._4._1b
             procList.Focus();
 
         }
+
+        /* Add DLL To DLL List When addDll Clicked */
+
 
         private void addDll_Click(object sender, RoutedEventArgs e)
         {
@@ -1467,7 +1467,7 @@ namespace ScriptHub_v3._4._1b
                     tempItem.IsEnabled = false;
 
                     dllTypesList.Items.Add(tempItem);
-                } 
+                }
                 else if (BasicInject.GetDllMachineType(temp).Equals(BasicInject.MachineType.IMAGE_FILE_MACHINE_IA64))
                 {
                     ListViewItem tempItem = new ListViewItem();
@@ -1485,6 +1485,8 @@ namespace ScriptHub_v3._4._1b
 
             }
         }
+
+        /* Remove Current Selected DLL From DLL List When rmvDll Clicked */
 
         private void rmvDll_Click(object sender, RoutedEventArgs e)
         {
@@ -1507,6 +1509,8 @@ namespace ScriptHub_v3._4._1b
 
         }
 
+        /* Clear All DLLs In DLL List When clrDlls Clicked */
+
         private void clrDlls_Click(object sender, RoutedEventArgs e)
         {
             dlls.Clear();
@@ -1515,16 +1519,20 @@ namespace ScriptHub_v3._4._1b
             dllNamesList.Items.Clear();
         }
 
+        /* Inject All DLLs In DLL List When injectButton Clicked */
+
         private void injectButton_Click(object sender, RoutedEventArgs e)
         {
             int i = 0;
 
-            foreach(string s in dlls)
+            foreach (string s in dlls)
             {
                 BasicInject.InjectDLL(procs[procList.SelectedIndex], dlls[i]);
                 i++;
             }
         }
+
+        /* Make Selected Proccess Lighter In Color And Update ToolTip */
 
         private void procList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -1538,30 +1546,42 @@ namespace ScriptHub_v3._4._1b
             procList.SelectedItem = selected;
         }
 
+        /* Configure Button Click Handler */
+
         private void configInjector_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Injector Configuration Settings coming in v2.1", "Feature Not Availible", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+        /* Open About Page When about Clicked */
 
         private void about_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("https://www.316tb.dev/#magma-iae");
         }
 
+        /* Open Home Page When webSite Clicked */
+
         private void webSite_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("https://www.316tb.dev/");
         }
+
+        /* Open GitHub Repo When gitHub Clicked */
 
         private void gitHub_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("https://github.com/Not316tb/");
         }
 
+        /* Open Discord Invite When discUrl Clicked */
+
         private void discUrl_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("https://discord.gg/H3qPn377Qv");
         }
+
+        /* Update Attach From Home Config To False When atchFromHome UnChecked */
 
         private void atchFromHome_Unchecked(object sender, RoutedEventArgs e)
         {
@@ -1579,6 +1599,8 @@ namespace ScriptHub_v3._4._1b
 
             config[5] = "flase";
         }
+
+        /* Update Attach From Home Config To True When atchFromHome Checked */
 
         private void atchFromHome_Checked(object sender, RoutedEventArgs e)
         {
