@@ -10,13 +10,18 @@ using System.Runtime.InteropServices;
 
 namespace ScriptHub_v3._4._1b
 {
+
+    /* Local Functions Class */
+
     class LocalFunctions
     {
+        /* Create ShortHand To Fill ListBox With Items In Folder */
+
         public static void PopulateListBox(ListBox lsb, string Folder, string FileType)
         {
             DirectoryInfo dinfo = new DirectoryInfo(Folder);
             FileInfo[] Files = dinfo.GetFiles(FileType);
-            
+
             int i = 0;
 
             foreach (FileInfo file in Files)
@@ -36,10 +41,15 @@ namespace ScriptHub_v3._4._1b
         }
     }
 
+    /* DLL Pipe Related Functions (Executor) */
     class DllPipes
     {
+        /* kernel32.dll Required For Working With Pipes */
+
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern bool WaitNamedPipe(string name, int timeout);
+
+        /* ShortHand To Check If A Named Pipe Is Currently Active */
 
         public static bool NamedPipeExist(string pipeName)
         {
@@ -64,8 +74,12 @@ namespace ScriptHub_v3._4._1b
         }
     }
 
-    class BasicInject 
+    /* DLL Injector Related Functions */
+
+    class BasicInject
     {
+        /* kernel32.dll Required For Injection */
+
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
 
