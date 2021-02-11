@@ -1,5 +1,5 @@
 # This project has been discontinued by its creator.
-### Check out the new version: [MagmaKit](https://github.com/Not316tb/MagmaKit/)
+### Check out the new version: [MagmaKit](https://magma.316tb.dev/)
 
 <br/>
 
