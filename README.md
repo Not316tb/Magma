@@ -1,3 +1,14 @@
+# This project has been discontinued by its creator.
+### Check out the new version: [MagmaKit](https://github.com/Not316tb/MagmaKit/)
+
+<br/>
+
+[![Downloads](https://img.shields.io/github/downloads/Not316tb/Magma-IaE/total?color=brightgreen)]()
+![Status](https://img.shields.io/badge/status-abandoned-yellow)
+![Release](https://img.shields.io/github/v/release/Not316tb/Magma-IaE)
+![Language](https://img.shields.io/badge/language-C%23-blue)
+![Framework](https://img.shields.io/badge/framework-WPF%20.NET-blue)
+
 ### Installation
 
 Downloading and Installing Magma onto your computer is quite simple, simply follow the steps listed bellow.
