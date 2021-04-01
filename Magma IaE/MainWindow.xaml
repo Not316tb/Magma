@@ -306,7 +306,7 @@
 
             <Grid x:Name="HomeScreenGrid" Margin="0" HorizontalAlignment="Left" Height="0" Background="#FF121212" VerticalAlignment="Top" Width="675" Visibility="Hidden">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="600" Height="325">
-                    <TextBlock Margin="0 30 0 0" FontSize="20" TextAlignment="Center" Text="Welcome to ScriptHub 2.0.0&#xA;Choose a mode below to get started." HorizontalAlignment="Center" FontFamily="Arial"/>
+                    <TextBlock Margin="0 30 0 0" FontSize="20" TextAlignment="Center" Text="Welcome to Magma v2.0.8&#xA;Choose a mode below to get started." HorizontalAlignment="Center" FontFamily="Arial"/>
                     <Grid Height="200" Width="600">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
@@ -442,7 +442,8 @@
                 <TextBlock FontSize="22" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,70,0" HorizontalAlignment="Right" Width="122">Executor API</TextBlock>
                 <ComboBox x:Name="ApiType" VerticalAlignment="Bottom" FontSize="14" Width="113" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" materialDesign:ColorZoneAssist.Mode="Dark" BorderBrush="White" Foreground="#FFDFDFDF" SelectionChanged="ApiType_SelectionChanged">
                     <ComboBoxItem IsEnabled="False" FontWeight="Bold" FontFamily="Consolas">[-] Keyless APIs [-]</ComboBoxItem>
-                    <ComboBoxItem IsSelected="True">EasyExploits</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">Anemo (CheatSquad v2)</ComboBoxItem>
+                    <ComboBoxItem>EasyExploits</ComboBoxItem>
                     <ComboBoxItem>WeAreDevs</ComboBoxItem>
                     <ComboBoxItem>CheatSquad</ComboBoxItem>
                     <ComboBoxItem IsEnabled="False" FontWeight="Bold" FontFamily="Consolas">[+] Premium APIs [+]</ComboBoxItem>

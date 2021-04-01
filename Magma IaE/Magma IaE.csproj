@@ -65,7 +65,7 @@
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -74,6 +74,9 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AnemoAPI">
+      <HintPath>C:\Users\316th\Desktop\AnemoAPI.dll</HintPath>
+    </Reference>
     <Reference Include="CheatSquadAPI">
       <HintPath>bin\Debug\CheatSquadAPI.dll</HintPath>
     </Reference>
