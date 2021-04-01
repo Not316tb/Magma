@@ -56,6 +56,7 @@ using System.Linq;
 using EasyExploits;
 using WeAreDevs_API;
 using CheatSquadAPI;
+using AnemoAPI;
 using System.Timers;
 using System.Windows;
 using Microsoft.Win32;
@@ -128,6 +129,7 @@ namespace ScriptHub_v3._4._1b
         WeAreDevs_API.ExploitAPI WRD = new WeAreDevs_API.ExploitAPI();
         ClubDarkAPI.ExploitAPI CDRK = new ClubDarkAPI.ExploitAPI();
         CheatSquadAPI.Module CSQ = new CheatSquadAPI.Module();
+        AnemoAPI.Anemo ANMO = new AnemoAPI.Anemo();
 
         /* Define Global Variables */
 
@@ -191,7 +193,7 @@ namespace ScriptHub_v3._4._1b
 
             if (!File.Exists(System.IO.Path.GetFullPath("config ( DO NOT EDIT! ).txt")))
             {
-                File.WriteAllText(System.IO.Path.GetFullPath("config ( DO NOT EDIT! ).txt"), "classic\nezxp\nfalse\nfalse\n./Scripts\nfalse");
+                File.WriteAllText(System.IO.Path.GetFullPath("config ( DO NOT EDIT! ).txt"), "classic\nanmo\nfalse\nfalse\n./Scripts\nfalse");
             }
 
             if (File.ReadLines(System.IO.Path.GetFullPath("config ( DO NOT EDIT! ).txt")).Count() <= 5)
@@ -205,19 +207,23 @@ namespace ScriptHub_v3._4._1b
 
             if (config[1] == "ezxp")
             {
+                ApiType.SelectedIndex = 2;
+            }
+            else if (config[1] == "anmo")
+            {
                 ApiType.SelectedIndex = 1;
             }
             else if (config[1] == "cdrk")
             {
-                ApiType.SelectedIndex = 5;
+                ApiType.SelectedIndex = 6;
             }
             else if (config[1] == "wrd")
             {
-                ApiType.SelectedIndex = 2;
+                ApiType.SelectedIndex = 3;
             }
             else if (config[1] == "csq")
             {
-                ApiType.SelectedIndex = 3;
+                ApiType.SelectedIndex = 4;
             }
 
             if (config[2] == "false")
@@ -305,7 +311,7 @@ namespace ScriptHub_v3._4._1b
             about.ToolTip = new ToolTip { Content = "View GitHub Documentation" };
             configInjector.ToolTip = new ToolTip { Content = "Configure Injector Settings" };
             injectButton.ToolTip = new ToolTip { Content = "Inject DLL" };
-            discUrl.ToolTip = new ToolTip { Content = "Join The Official Discord" };
+            discUrl.ToolTip = new ToolTip { Content = "Join The Studio7 Discord" };
             webSite.ToolTip = new ToolTip { Content = "Visit My Website" };
             gitHub.ToolTip = new ToolTip { Content = "Visit My GitHub" };
 
@@ -460,6 +466,28 @@ namespace ScriptHub_v3._4._1b
                 else if (config[1] == "csq")
                 {
                     if (DllPipes.NamedPipeExist("taStqdau1Ch1ee33"))
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            Status.Foreground = (Brush)(new System.Windows.Media.BrushConverter()).ConvertFromString("#FF00FF00");
+                            Status.Text = "Injected";
+                            apiInjected = true;
+                            ButtonReAttach.ToolTip = new ToolTip { Content = "Re-Attach API" };
+                        });
+                    }
+                    else
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            Status.Foreground = (Brush)(new System.Windows.Media.BrushConverter()).ConvertFromString("#FF7C7C7C");
+                            Status.Text = "Idle";
+                            apiInjected = false;
+                        });
+                    }
+                }
+                else if (config[1] == "anmo")
+                {
+                    if (DllPipes.NamedPipeExist("AnemoPIPE"))
                     {
                         this.Dispatcher.Invoke(() =>
                         {
@@ -776,6 +804,10 @@ namespace ScriptHub_v3._4._1b
             {
                 WRD.SendLuaScript(ScriptTextBox.Text);
             }
+            else if (config[1] == "anmo")
+            {
+                ANMO.ExecuteScript(ScriptTextBox.Text);
+            }
             else if (config[1] == "ezxp")
             {
                 EZXP.ExecuteScript(ScriptTextBox.Text);
@@ -878,6 +910,22 @@ namespace ScriptHub_v3._4._1b
                 File.WriteAllText(System.IO.Path.GetFullPath("config ( DO NOT EDIT! ).txt"), dump);
 
                 config[1] = "wrd";
+            }
+            else if (value == "System.Windows.Controls.ComboBoxItem: Anemo (CheatSquad v2)")
+            {
+                string dump = null;
+                string[] temp = File.ReadAllLines(System.IO.Path.GetFullPath("config ( DO NOT EDIT! ).txt"));
+
+                temp[1] = "anmo";
+
+                for (int i = 0; i < temp.Length; i++)
+                {
+                    dump = dump + temp[i] + "\n";
+                }
+
+                File.WriteAllText(System.IO.Path.GetFullPath("config ( DO NOT EDIT! ).txt"), dump);
+
+                config[1] = "anmo";
             }
             else if (value == "System.Windows.Controls.ComboBoxItem: ClubDark")
             {
@@ -1235,6 +1283,32 @@ namespace ScriptHub_v3._4._1b
                     }
 
                 }
+                else if (config[1] == "ezxp")
+                {
+
+                    ANMO.InjectAnemo();
+                    if (!DllPipes.NamedPipeExist("AnemoPIPE"))
+                    {
+                        Thread.Sleep(5000);
+                    }
+
+                    if (DllPipes.NamedPipeExist("AnemoPIPE"))
+                    {
+                        Status.Foreground = (Brush)(new System.Windows.Media.BrushConverter()).ConvertFromString("#FF00FF00");
+                        Status.Text = "Injected";
+                        apiInjected = true;
+                        ButtonReAttach.ToolTip = new ToolTip { Content = "Re-Attach API" };
+                        MoveMenuCursor(2);
+                        ListViewMenu.SelectedIndex = 2;
+                    }
+                    else
+                    {
+                        Status.Foreground = (Brush)(new System.Windows.Media.BrushConverter()).ConvertFromString("#FF7C7C7C");
+                        Status.Text = "Idle";
+                        apiInjected = false;
+                    }
+
+                }
                 else if (config[1] == "cdrk")
                 {
 
@@ -1315,6 +1389,27 @@ namespace ScriptHub_v3._4._1b
                 Thread.Sleep(750);
 
                 if (WRD.isAPIAttached())
+                {
+                    Status.Foreground = (Brush)(new System.Windows.Media.BrushConverter()).ConvertFromString("#FF00FF00");
+                    Status.Text = "Injected";
+                    apiInjected = true;
+                    ButtonReAttach.ToolTip = new ToolTip { Content = "Re-Attach API" };
+                }
+                else
+                {
+                    Status.Foreground = (Brush)(new System.Windows.Media.BrushConverter()).ConvertFromString("#FF7C7C7C");
+                    Status.Text = "Idle";
+                    apiInjected = false;
+                }
+            }
+            else if (config[1] == "anmo")
+            {
+
+                ANMO.InjectAnemo();
+
+                Thread.Sleep(750);
+
+                if (ANMO.IsInjected())
                 {
                     Status.Foreground = (Brush)(new System.Windows.Media.BrushConverter()).ConvertFromString("#FF00FF00");
                     Status.Text = "Injected";
@@ -1578,7 +1673,7 @@ namespace ScriptHub_v3._4._1b
 
         private void discUrl_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://discord.gg/H3qPn377Qv");
+            Process.Start("https://discord.gg/rpaF3hKrC7");
         }
 
         /* Update Attach From Home Config To False When atchFromHome UnChecked */

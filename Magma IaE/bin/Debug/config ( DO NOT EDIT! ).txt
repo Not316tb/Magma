@@ -1,6 +1,6 @@
 classic
-ezxp
+anmo
 false
-false
+true
 ./Scripts
 false
