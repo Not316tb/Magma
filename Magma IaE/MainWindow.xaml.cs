@@ -193,6 +193,9 @@ namespace ScriptHub_v3._4._1b
 
         private static string GetUrl(string url)
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             HttpWebRequest request = (HttpWebRequest)WebRequest.CreateDefault(new Uri(url));
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
