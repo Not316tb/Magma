@@ -35,8 +35,6 @@ Downloading and Installing Magma onto your computer is quite simple, simply foll
   &nbsp;&nbsp;5.) Click the `Inject` Button (Syringe Icon)  
   
 ![screenshot1](https://user-images.githubusercontent.com/47403033/114762908-3b12a200-9d30-11eb-8c8d-b523235b50ae.png)
-![screenshot2](https://user-images.githubusercontent.com/47403033/114762911-3b12a200-9d30-11eb-90a4-142893b2bea6.png)
-![screenshot3](https://user-images.githubusercontent.com/47403033/114762913-3bab3880-9d30-11eb-8f85-a70e8bb6d51c.png)  
 
 ## FAQ  
 
