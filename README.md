@@ -14,7 +14,7 @@ Why should cheaters have to pay to get a decent cheat? Magma is completely free 
 
 Downloading and Installing Magma onto your computer is quite simple, simply follow the steps listed bellow.
   
-  &nbsp;&nbsp;1.) Goto the [Magma Releases Page](https://github.com/Not316tb/Magma-IaE/releases) And download the latest version (currently v2.0.8)    
+  &nbsp;&nbsp;1.) Goto the [Magma Releases Page](https://github.com/Not316tb/Magma-IaE/releases) And download the latest version (currently v2.0.9)    
   &nbsp;&nbsp;3.) Extract the ZIP Archive onto your Desktop  
   &nbsp;&nbsp;2.) **Configure Your Anti-Virus** to ignore the `Magma IaE v2.0.9` folder. *    
   &nbsp;&nbsp;4.) Run the `Magma_IaE.exe` as Administrator  
