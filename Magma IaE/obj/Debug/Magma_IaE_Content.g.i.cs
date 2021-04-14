@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("magma.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("textfile1.txt")]
 
 

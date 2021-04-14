@@ -1,17 +1,22 @@
 ﻿using System;
 using System.IO;
+using System.Xml;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using ICSharpCode.AvalonEdit;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using ICSharpCode.AvalonEdit.Highlighting;
+using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 
 namespace ScriptHub_v3._4._1b
 {
 
     /* Local Functions Class */
+
 
     class LocalFunctions
     {

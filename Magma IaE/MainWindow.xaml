@@ -101,7 +101,7 @@
                 </StackPanel>
             </Grid>
             <Grid x:Name="LuaScreenGrid" HorizontalAlignment="Left" Height="0" Visibility="Hidden" Background="#FF121212" VerticalAlignment="Top" Width="675">
-                <Avalon:TextEditor Avalon:SyntaxHighlighting="JavaScript" x:Name="ScriptTextBox" Margin="35,32,0,30" HorizontalAlignment="Left" Width="452" Padding="5" FontSize="12px" ShowLineNumbers="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="#FF161616" LineNumbersForeground="#FFDFDFDF" Foreground="#FF7C7C7C" FontFamily="Lucida Console"/>
+                <Avalon:TextEditor x:Name="ScriptTextBox" Margin="35,32,0,30" HorizontalAlignment="Left" Width="452" Padding="5" FontSize="12px" ShowLineNumbers="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="#FF161616" LineNumbersForeground="#4a4a4a" Foreground="#999999" FontFamily="Lucida Console"/>
                 <ListBox x:Name="ScriptsListBox" Padding="2" HorizontalAlignment="Right" Height="280" Margin="0,0,35,42" VerticalAlignment="Bottom" Width="143" Background="#FF161616" Foreground="#FFDFDFDF" SelectionChanged="ScriptsListBox_SelectedIndexChanged">
 
                 </ListBox>

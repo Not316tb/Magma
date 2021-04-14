@@ -2,7 +2,7 @@
  * Current Name: Magma IaE
  * Creator: Not316tb
  * 
- * Version: 2.0.0 [Official Release]
+ * Version: 2.0.9 [Official Release]
  * 
  * =====================================================================
  * 
@@ -69,6 +69,7 @@ using System.Windows.Media;
 using System.Windows.Input;
 using System.Windows.Shapes;
 using System.Windows.Interop;
+using ICSharpCode.AvalonEdit;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -76,6 +77,8 @@ using System.Windows.Navigation;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 using System.Runtime.InteropServices;
+using System.Net;
+using System.Runtime.Remoting;
 
 namespace ScriptHub_v3._4._1b
 {
@@ -176,19 +179,55 @@ namespace ScriptHub_v3._4._1b
         private void ScriptsListBox_SelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            string itemName = ScriptsListBox.Items[ScriptsListBox.SelectedIndex].ToString().Replace("System.Windows.Controls.ListBoxItem: ", "");
-
-            ScriptTextBox.Text = File.ReadAllText($"{System.IO.Path.GetFullPath(ScriptsDirectory.Text)}/{itemName}");
+            try
+            {
+                string itemName = ScriptsListBox.Items[ScriptsListBox.SelectedIndex].ToString().Replace("System.Windows.Controls.ListBoxItem: ", "");
+                ScriptTextBox.Text = File.ReadAllText($"{System.IO.Path.GetFullPath(ScriptsDirectory.Text)}/{itemName}");
+            } catch
+            {
+                
+            }
         }
 
         /* Initialization Function [Called After MainWindow()] */
 
+        private static string GetUrl(string url)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.CreateDefault(new Uri(url));
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                if (response.StatusCode != HttpStatusCode.OK)
+                    throw new ServerException("Server returned an error code (" + ((int)response.StatusCode).ToString() +
+                        ") while trying to retrieve a new key: " + response.StatusDescription);
+
+                using (var sr = new StreamReader(response.GetResponseStream()))
+                {
+                    return sr.ReadToEnd();
+                }
+            }
+        }
+
         private void Window_Initialized(object sender, EventArgs e)
         {
+
+            if (GetUrl("https://raw.githubusercontent.com/Not316tb/Magma/main/version.txt") != "2.0.9\n")
+            {
+                System.Windows.Forms.DialogResult UpdaterQuery = System.Windows.Forms.MessageBox.Show("A new version of Magma is available! Download it now?", "Auto-Updater", System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Information);
+
+                if (UpdaterQuery == System.Windows.Forms.DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("http://github.com/Not316tb/Magma/releases");
+                    System.Windows.Application.Current.Shutdown();
+                }
+            }  
 
             /* Set Window Name */
 
             this.Title = "Magma IaE";
+
+            ScriptTextBox.Text = "--[[                                        /\\\n	                                       /__\\\n	Hi! My name's Not316tb. Welcome         ||\n	to the Magma Injector & Executor!       ||\n	                                        ||\n    Use the firework button to              ||\n    Execute your scripts                    ||\n                                            ||\nChange Log:                                 ||\n                                            ||\n  [*] Fixed Some Bugs               ________||_______\n  [*] Added Syntax Highlighting    |                 |\n  [*] Added This \"Guide\"	       |    Click the    |\n	                               |  Attach Button  |\n	                               | To Get Started! |\n	                               |_________________|\n]]--";
+
+            ScriptTextBox.SyntaxHighlighting =  Magma_IaE.ResourceLoader.LoadHighlightingDefinition("Lua.xshd");
 
             /* Create Config File If Corrupted / Doesn't Exist */
 
@@ -275,7 +314,6 @@ namespace ScriptHub_v3._4._1b
                 ScriptsDirectory.Text = config[4];
                 ScriptsDirLabel.Content = paththing;
 
-                ScriptsListBox.Items.Clear();
                 LocalFunctions.PopulateListBox(ScriptsListBox, ScriptsDirectory.Text, "*.txt");
                 LocalFunctions.PopulateListBox(ScriptsListBox, ScriptsDirectory.Text, "*.lua");
             }
@@ -871,6 +909,17 @@ namespace ScriptHub_v3._4._1b
                 file.WriteLine(ScriptTextBox.Text);
                 file.Close();
             }
+
+            var LastSelected = ScriptsListBox.SelectedItem;
+
+            ScriptsListBox.SelectedItem = null;
+
+            ScriptsListBox.Items.Clear();
+            LocalFunctions.PopulateListBox(ScriptsListBox, ScriptsDirectory.Text, "*.txt");
+            LocalFunctions.PopulateListBox(ScriptsListBox, ScriptsDirectory.Text, "*.lua");
+
+            ScriptsListBox.SelectedItem = LastSelected;
+
         }
 
         private void ApiType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -1054,9 +1103,11 @@ namespace ScriptHub_v3._4._1b
         {
             if (Directory.Exists(System.IO.Path.GetFullPath(ScriptsDirectory.Text)))
             {
+                ScriptsListBox.SelectedItem = null;
                 ScriptsListBox.Items.Clear();
                 LocalFunctions.PopulateListBox(ScriptsListBox, ScriptsDirectory.Text, "*.txt");
                 LocalFunctions.PopulateListBox(ScriptsListBox, ScriptsDirectory.Text, "*.lua");
+
 
                 string paththing = "";
 
@@ -1088,7 +1139,9 @@ namespace ScriptHub_v3._4._1b
 
             else
             {
-                MessageBox.Show("Fuck you. Cunt. Kill yourself.");
+                MessageBox.Show("Doesn't look like that file directory exists.", "Oops!", MessageBoxButton.OK, MessageBoxImage.Error);
+                ScriptsDirectory.Text = "./Scripts";
+                ScriptsDirectory.Focus();
             }
 
         }
@@ -1099,8 +1152,11 @@ namespace ScriptHub_v3._4._1b
         {
             if (e.Key == Key.Return || e.Key == Key.Enter)
             {
+
+
                 if (Directory.Exists(System.IO.Path.GetFullPath(ScriptsDirectory.Text)))
                 {
+                    ScriptsListBox.SelectedItem = null;
                     ScriptsListBox.Items.Clear();
                     LocalFunctions.PopulateListBox(ScriptsListBox, ScriptsDirectory.Text, "*.txt");
                     LocalFunctions.PopulateListBox(ScriptsListBox, ScriptsDirectory.Text, "*.lua");
@@ -1135,7 +1191,9 @@ namespace ScriptHub_v3._4._1b
 
                 else
                 {
-                    MessageBox.Show("Fuck you. Cunt. Kill yourself.");
+                    MessageBox.Show("Doesn't look like that file directory exists.", "Oops!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    ScriptsDirectory.Text = "./Scripts";
+                    ScriptsDirectory.Focus();
                 }
             }
         }
