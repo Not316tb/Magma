@@ -91,3 +91,4 @@ E:\Magma\Magma IaE\obj\Debug\Magma IaE.csproj.CopyComplete
 E:\Magma\Magma IaE\obj\Debug\Magma_IaE.exe
 E:\Magma\Magma IaE\obj\Debug\Magma_IaE.pdb
 E:\Magma\Magma IaE\bin\Debug\AnemoAPI.dll
+E:\Magma\Magma IaE\obj\Debug\Magma IaE.csprojAssemblyReference.cache

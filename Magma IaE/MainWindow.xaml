@@ -306,7 +306,7 @@
 
             <Grid x:Name="HomeScreenGrid" Margin="0" HorizontalAlignment="Left" Height="0" Background="#FF121212" VerticalAlignment="Top" Width="675" Visibility="Hidden">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="600" Height="325">
-                    <TextBlock Margin="0 30 0 0" FontSize="20" TextAlignment="Center" Text="Welcome to Magma v2.0.8&#xA;Choose a mode below to get started." HorizontalAlignment="Center" FontFamily="Arial"/>
+                    <TextBlock Margin="0 30 0 0" FontSize="20" TextAlignment="Center" Text="Welcome to Magma v2.0.9&#xA;Choose a mode below to get started." HorizontalAlignment="Center" FontFamily="Arial"/>
                     <Grid Height="200" Width="600">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
