@@ -1,8 +1,3 @@
-# This project has been discontinued by its creator.
-### Check out the new version: [MagmaKit](https://magma.316tb.dev/)
-
-<br/>
-
 [![Downloads](https://img.shields.io/github/downloads/Not316tb/Magma-IaE/total?color=brightgreen)]()
 ![Status](https://img.shields.io/badge/status-abandoned-yellow)
 ![Release](https://img.shields.io/github/v/release/Not316tb/Magma-IaE)
