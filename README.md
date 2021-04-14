@@ -16,7 +16,7 @@ Downloading and Installing Magma onto your computer is quite simple, simply foll
   
   &nbsp;&nbsp;1.) Goto the [Magma Releases Page](https://github.com/Not316tb/Magma-IaE/releases) And download the latest version (currently v2.0.8)    
   &nbsp;&nbsp;3.) Extract the ZIP Archive onto your Desktop  
-  &nbsp;&nbsp;2.) **Configure Your Anti-Virus** to ignore the `bin` folder. *    
+  &nbsp;&nbsp;2.) **Configure Your Anti-Virus** to ignore the `Magma IaE v2.0.9` folder. *    
   &nbsp;&nbsp;4.) Run the `Magma IaE` shortcut as Administrator  
 
 #### To use the Roblox Lua Executor:
