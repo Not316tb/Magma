@@ -14,25 +14,25 @@ Why should cheaters have to pay to get a decent cheat? Magma is completely free 
 
 Downloading and Installing Magma onto your computer is quite simple, simply follow the steps listed bellow.
   
-  &nbsp;&nbsp;1.) Goto the [Magma Releases Page](https://github.com/Not316tb/Magma-IaE/releases) And download the latest version (currently v2.0.8)  
-  &nbsp;&nbsp;3.) Extract the ZIP Archive onto your Desktop
-  &nbsp;&nbsp;2.) **Configure Your Anti-Virus** to ignore the `bin` folder. *  
-  &nbsp;&nbsp;4.) Run the `Magma IaE` shortcut as Administrator
+  &nbsp;&nbsp;1.) Goto the [Magma Releases Page](https://github.com/Not316tb/Magma-IaE/releases) And download the latest version (currently v2.0.8)    
+  &nbsp;&nbsp;3.) Extract the ZIP Archive onto your Desktop  
+  &nbsp;&nbsp;2.) **Configure Your Anti-Virus** to ignore the `bin` folder. *    
+  &nbsp;&nbsp;4.) Run the `Magma IaE` shortcut as Administrator  
 
 #### To use the Roblox Lua Executor:
   
-  &nbsp;&nbsp;1.) Choose an API in the Settings Tab (I recommend using Anemo since it works the best)
-  &nbsp;&nbsp;2.) Open the Lua Tab
-  &nbsp;&nbsp;3.) Click the `Link Icon` (Top Middle) to attach the selected API to Roblox
-  &nbsp;&nbsp;4.) Paste your script into the TextBox (or select one from the menu)
-  &nbsp;&nbsp;5.) Click the `Firework Icon` (Top-Left) to run the script!
+  &nbsp;&nbsp;1.) Choose an API in the Settings Tab (I recommend using Anemo since it works the best)  
+  &nbsp;&nbsp;2.) Open the Lua Tab  
+  &nbsp;&nbsp;3.) Click the `Link Icon` (Top Middle) to attach the selected API to Roblox  
+  &nbsp;&nbsp;4.) Paste your script into the TextBox (or select one from the menu)  
+  &nbsp;&nbsp;5.) Click the `Firework Icon` (Top-Left) to run the script!  
 
 #### To use the Internal DLL Injector:
-  &nbsp;&nbsp;1.) Open the Injector Tab
-  &nbsp;&nbsp;2.) Click the `Add` Button and select a DLL file
-  &nbsp;&nbsp;3.) Open the dropdown menu under "Process"
-  &nbsp;&nbsp;4.) Select your desired application (you can search for the first letter if needed)
-  &nbsp;&nbsp;5.) Click the `Inject` Button (Syringe Icon)
+  &nbsp;&nbsp;1.) Open the Injector Tab  
+  &nbsp;&nbsp;2.) Click the `Add` Button and select a DLL file  
+  &nbsp;&nbsp;3.) Open the dropdown menu under "Process"  
+  &nbsp;&nbsp;4.) Select your desired application (you can search for the first letter if needed)  
+  &nbsp;&nbsp;5.) Click the `Inject` Button (Syringe Icon)  
   
 ![screenshot1](https://user-images.githubusercontent.com/47403033/114762908-3b12a200-9d30-11eb-8c8d-b523235b50ae.png)
 ![screenshot2](https://user-images.githubusercontent.com/47403033/114762911-3b12a200-9d30-11eb-90a4-142893b2bea6.png)
