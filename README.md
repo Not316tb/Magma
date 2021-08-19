@@ -1,3 +1,11 @@
+### Quick PSA: 
+# Don't use any of the DLLs that come with Magma
+It was discovered that some are viruses, the only safe one is the GMod Lmaobox seen in the YouTube showcase. I'll remove the viruses when I get a chance to, but for now **DON'T USE THE STOCK DLLS!!!**.
+
+[Pretty Good TF2 Cheat (Virus Checked) (Detected)](https://www.unknowncheats.me/forum/team-fortress-2-a/436430-seowned-featured-cheat.html)
+<br/><br/>
+<br/><br/>
+<br/><br/>
 [![Downloads](https://img.shields.io/github/downloads/Not316tb/Magma-IaE/total?color=brightgreen)]()
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Release](https://img.shields.io/github/v/release/Not316tb/Magma-IaE)
