@@ -1,5 +1,5 @@
 ### Quick PSA: 
-# ~~Don't use any of the DLLs that come with Magma~~ Fixed!
+# [Fixed!] ~~Don't use any of the DLLs that come with Magma~~
 It was discovered that some were viruses, the only 100% safe one is the GMod Lmaobox DLL (`GLuaLoader.dll`) seen in the YouTube showcase. I have finally removed the viruses, but still be careful when looking for / downloading your own. If you still feel unsafe about the executable itself, feel free to compile it yourself since that's part of the reason I made it open sourced.
 
 [Pretty Good TF2 Cheat (Virus Checked) (Detected)](https://www.unknowncheats.me/forum/team-fortress-2-a/436430-seowned-featured-cheat.html)
