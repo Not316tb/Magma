@@ -7,7 +7,7 @@ It was discovered that some of the stock DLLs were viruses, and that the only 10
 <br/><br/>
 <br/><br/>
 [![Downloads](https://img.shields.io/github/downloads/Not316tb/Magma-IaE/total?color=brightgreen)]()
-![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Status](https://img.shields.io/badge/status-broken-critical)
 ![Release](https://img.shields.io/github/v/release/Not316tb/Magma-IaE)
 ![Language](https://img.shields.io/badge/language-C%23-blue)
 ![Framework](https://img.shields.io/badge/framework-WPF%20.NET-blue)
