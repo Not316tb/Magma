@@ -1,3 +1,6 @@
+# Magma is Brocken :(
+I have plans to fix it, but I don't know when I'll have time.
+
 ### Quick PSA: 
 # [Fixed!] ~~Don't use any of the DLLs that come with Magma~~
 It was discovered that some of the stock DLLs were viruses, and that the only 100% safe one is the GMod Lmaobox DLL (`GLuaLoader.dll`) seen in the YouTube showcase. I have finally removed the viruses, but still be careful when looking for / downloading your own. If you still feel unsafe about the executable itself, feel free to compile it yourself since that's part of the reason I made it open sourced.
