@@ -1,5 +1,5 @@
 # Magma is Brocken :(
-I have plans to fix it, but I don't know when I'll have time.
+I no longer have plans to fix it. Sorry guys, was fun while it lasted.
 
 ### Quick PSA: 
 # [Fixed!] ~~Don't use any of the DLLs that come with Magma~~
